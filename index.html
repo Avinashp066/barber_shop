@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width , initial-scale=1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <section id="banner">
@@ -198,7 +198,7 @@
                 <img src="/Barber_Shop_img/footer-img.png" class="footer-img">
                 <div class="title-text">
                     <p>CONTACT</p>
-                    <h1>Visit Shop Toady</h1>
+                    <h1>Visit Shop Today</h1>
                 </div>
                 <div class="footer-row">
                 <div class="footer-left">
@@ -235,18 +235,51 @@
             const sidenav = document.getElementById("sidenav");
             const menu = document.getElementById("menu");
             const modal = document.getElementById("modal");
-
             // sidenav.style.right="-250px"
-
+           
             menubtn.onclick = function(){
                 if(sidenav.style.right=="-250px"){
                     sidenav.style.right="0";
-                    menu.src ="/Barber_Shop_img/close.png"
+                    menu.src ="/Barber_Shop_img/close.png"  
+                    
             } else {
                 sidenav.style.right="-250px"
                 menu.src ="/Barber_Shop_img/menu.png"
+            }};   
+              
+
+            window.onclick = function(e){
+                if(e.target != modal && e.target != menu) {
+                    // console.log(e.target);
+                    // if(sidenav.style.right=="0"){
+                    sidenav.style.right="-250px";
+                    menu.src ="/Barber_Shop_img/menu.png"  
+                    
+             /*else {
+                sidenav.style.right="-250px"
+                menu.src ="/Barber_Shop_img/menu.png"
+                }*/
+
+
             }};
 
+
+            /*
+            // jquery for closing sidenav
+            $( document ).ready(function() {
+
+                $("#menubtn").click(function(){
+                    $("#sidenav").show();
+            });
+
+            window.onclick = function(event) {
+            if (event.target.id != "menu") {
+                $("#sidenav").hide();
+                menu.src ="/Barber_Shop_img/menu.png"
+                }
+             }
+
+            });*/
             
            
 
