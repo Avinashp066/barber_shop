@@ -230,23 +230,57 @@
 
 
 
+        
         <script>
             const menubtn = document.getElementById("menubtn");
             const sidenav = document.getElementById("sidenav");
             const menu = document.getElementById("menu");
             const modal = document.getElementById("modal");
-
             // sidenav.style.right="-250px"
-
+           
             menubtn.onclick = function(){
                 if(sidenav.style.right=="-250px"){
                     sidenav.style.right="0";
-                    menu.src ="/Barber_Shop_img/close.png"
+                    menu.src ="/Barber_Shop_img/close.png"  
+                    
             } else {
                 sidenav.style.right="-250px"
                 menu.src ="/Barber_Shop_img/menu.png"
+            }};   
+              
+
+            window.onclick = function(e){
+                if(e.target != modal && e.target != menu) {
+                    // console.log(e.target);
+                    // if(sidenav.style.right=="0"){
+                    sidenav.style.right="-250px";
+                    menu.src ="/Barber_Shop_img/menu.png"  
+                    
+             /*else {
+                sidenav.style.right="-250px"
+                menu.src ="/Barber_Shop_img/menu.png"
+                }*/
+
+
             }};
 
+
+            /*
+            // jquery for closing sidenav
+            $( document ).ready(function() {
+
+                $("#menubtn").click(function(){
+                    $("#sidenav").show();
+            });
+
+            window.onclick = function(event) {
+            if (event.target.id != "menu") {
+                $("#sidenav").hide();
+                menu.src ="/Barber_Shop_img/menu.png"
+                }
+             }
+
+            });*/
             
            
 
@@ -262,6 +296,7 @@
             
 
         </script>
+
          
     </body>
 </html>
